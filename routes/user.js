@@ -1,4 +1,9 @@
-app.post("/user/signup",function (req,res){
+
+const {Router} = require("express");
+
+const userRouter = Router()
+
+userRouter.post("/signup",function (req,res){
 
     res.json({
         message:'signup end point'
@@ -7,7 +12,7 @@ app.post("/user/signup",function (req,res){
 
 
 
-app.post("/user/signin",function(req,res){
+userRouter.post("/signin",function(req,res){
 
     res.json({
         message:'signin end point'
@@ -17,9 +22,13 @@ app.post("/user/signin",function(req,res){
 
 
 
-app.get("/user/purchase",function(req,res){
+userRouter.get("/purchase",function(req,res){
 
     res.json({
         message:"Show all the available courses"
     })
 })
+
+module.exports = {
+    userRouter: userRouter
+}
