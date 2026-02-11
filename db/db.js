@@ -1,5 +1,14 @@
 
-const {Schema, default:mongoose} = require("mongoose");
-mongoose.connect(process.env.MONGO_URL);
+const {mongoose} = require("mongoose");
 
-module.exports = mongoose;
+ async function connectDB(req,res){
+
+    await mongoose.connect("mongodb+srv://r02519625_db_user:iSPySMR16cdnrZZs@cluster0.cggwks0.mongodb.net/coursesellingapp");
+ }
+
+
+
+module.exports ={
+    mongoose,
+    connectDB
+}
